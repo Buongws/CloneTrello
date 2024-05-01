@@ -16,7 +16,6 @@ interface ListItemProps {
 
 const ListItem = ({ data, index }: ListItemProps) => {
   const textArenaRef = useRef<HTMLTextAreaElement>(null);
-
   const [isEditing, setIsEditing] = useState(false);
   const disableEditing = () => setIsEditing(false);
   const enableEditing = () => {

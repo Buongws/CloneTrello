@@ -9,6 +9,7 @@ import { useAction } from "@/hooks/use-action";
 import { updateList } from "@/actions/update-list";
 import { toast } from "sonner";
 import ListOptions from "./list-option";
+import { Button } from "@/components/ui/button";
 
 interface ListHeaderProps {
   data: List;
@@ -85,7 +86,7 @@ const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
             defaultValue={title}
             className="text-sm px-[7px] py-1 h-7 font-medium border-transparent hover:border-input transition truncate bg-transparent focus:bg-white"
           />
-          <button type="submit" hidden />
+          <Button type="submit" hidden />
         </form>
       ) : (
         <div

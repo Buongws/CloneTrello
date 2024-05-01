@@ -22,7 +22,6 @@ export const BoardList = async () => {
       createdAt: "desc",
     },
   });
-  console.log(boards);
 
   return (
     <div className="space-y-4">
