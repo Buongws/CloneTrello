@@ -24,7 +24,7 @@ export const Info = () => {
         />
       </div>
       <div className="space-y-1">
-        <p className="font-semibold text-xl">{organization?.name}</p>
+        <span className="font-semibold text-xl">{organization?.name}</span>
         <div className="flex items-center text-xs text-mute-foreground">
           <CreditCard className="h-3 w-3 mr-1" />
           Free
