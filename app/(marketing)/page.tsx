@@ -22,7 +22,7 @@ const MarketingPage = () => {
     <>
       <main>
         <Header
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         />
