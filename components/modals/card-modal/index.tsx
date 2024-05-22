@@ -11,6 +11,7 @@ import Header from "./header";
 import { Description } from "./description";
 import { Actions } from "./actions";
 import { Activity } from "./activity";
+import { DescriptionEditor } from "@/components/modals/card-modal/description-editor";
 
 export const CardModal = () => {
   const id = useCardModal((state) => state.id);
@@ -29,7 +30,7 @@ export const CardModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent>
+      <DialogContent className="max-h-[90vh]">
         {!cardData ? <Header.Skeleton /> : <Header data={cardData} />}
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
           <div className="col-span-3">
@@ -37,7 +38,8 @@ export const CardModal = () => {
               {!cardData ? (
                 <Description.Skeleton />
               ) : (
-                <Description data={cardData} />
+                <DescriptionEditor data={cardData} />
+                
               )}
               {!auditLogsData ? (
                 <Activity.Skeleton />

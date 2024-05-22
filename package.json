@@ -32,6 +32,8 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.309.0",
     "next": "14.0.4",
+    "primereact": "^10.6.5",
+    "quill": "^2.0.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.0",
