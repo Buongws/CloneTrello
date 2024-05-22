@@ -12,6 +12,7 @@ import { updateListOrder } from "@/actions/update-list-order";
 import { updateCardOrder } from "@/actions/update-card-order";
 
 import { toast } from "sonner";
+import { getList } from "@/actions/get-list";
 interface ListContainerProps {
   data: ListWithCards[];
   boardId: string;
@@ -45,6 +46,27 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
       toast.error(error);
     },
   });
+
+  const { execute: executeGetList } = useAction(getList, {
+    onSuccess: (data) => {
+      console.log(data)
+      setOrderedData(data);
+    },
+    onError: (error) => {
+      toast.error(error);
+    },
+  });
+
+  useEffect(() => {
+
+    //Auto getlist 3 seconds
+    const interval = setInterval(() => {
+      executeGetList({ boardId });
+    }, 5000);
+
+    return () => clearInterval(interval);
+
+  }, [boardId, executeGetList]);
 
   useEffect(() => {
     setOrderedData(data);
